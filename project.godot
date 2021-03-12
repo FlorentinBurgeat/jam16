@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Jam16"
+run/main_scene="res://Scenes/Zoo.tscn"
 config/icon="res://icon.png"
 
 [rendering]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 39.0666, 31.481 )
+
+[node name="Maison" type="StaticBody2D"]
+position = Vector2( 330.283, 152.233 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -38.0
+margin_top = -31.0
+margin_right = 39.0
+margin_bottom = 32.0
+color = Color( 0.654902, 0.341176, 0.113725, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

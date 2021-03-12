@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Composants/Maison.tscn" type="PackedScene" id=1]
+
+[node name="Zoo" type="Node"]
+
+[node name="Terrain" type="ColorRect" parent="."]
+margin_left = -478.65
+margin_top = -281.305
+margin_right = 1953.35
+margin_bottom = 1863.69
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 363.363, 253.932 )
+current = true
+
+[node name="Maison" parent="." instance=ExtResource( 1 )]
+
+[node name="Pingouin" type="KinematicBody2D" parent="."]
+position = Vector2( 72.106, 60.3069 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="Pingouin"]
+color = Color( 0.0509804, 0.301961, 0.6, 1 )
+polygon = PoolVector2Array( 4.08804, 8.77024, -4.15265, 8.77024, -6.96198, -7.89842, -3.77807, -18.7611, -9.02215, -19.6976, -3.21621, -23.4434, 0.529564, -28.5001, 5.77364, -28.6874, 8.20838, -20.0722, 5.77364, -8.46029, 9.14482, -3.96536, 8.39567, 0.904129, 4.46262, 3.52617 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pingouin"]
+position = Vector2( -3.12101, -8.34944 )
+scale = Vector2( 0.28601, 1.29447 )
+polygon = PoolVector2Array( 23.896, 12.7912, -2.29733, 12.9359, -14.7392, 0.203739, 12.7638, -15.5668, 29.1346, -15.4221, 36.3378, -8.47727 )
