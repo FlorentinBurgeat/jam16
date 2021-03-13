@@ -3,7 +3,6 @@
 [ext_resource path="res://Composants/Pingouin/Pingouin.gd" type="Script" id=1]
 [ext_resource path="res://assets/spritesping.png" type="Texture" id=2]
 
-
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 2 )
@@ -14,7 +13,7 @@ flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
@@ -22,8 +21,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 14.4781, 23.979 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 14.4781, 10.6237 )
 
 [node name="Pingouin" type="KinematicBody2D"]
 position = Vector2( 84.0924, 58.434 )
@@ -33,9 +32,9 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 5 )
+frames = SubResource( 3 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -5.99323, 0.936443 )
-shape = SubResource( 6 )
+position = Vector2( -5.39863, 14.315 )
+shape = SubResource( 4 )
