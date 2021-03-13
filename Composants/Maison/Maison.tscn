@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 39.0666, 31.481 )
+extents = Vector2( 38.1622, 31.481 )
 
 [node name="Maison" type="StaticBody2D"]
 position = Vector2( 330.283, 152.233 )

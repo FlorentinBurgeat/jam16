@@ -1,14 +1,11 @@
 extends KinematicBody2D
 
 # Declare member variables here. Examples:
-export var speed = 300
+export var speed = 200
 export var can_move: bool = true
 
 func calculateVelocity(target):
 	return target.normalized() * speed
-
-func updatePosition(velocity: Vector2, delta):
-	position += velocity * delta
 
 
 func calculateTargetedPosition():
@@ -25,6 +22,7 @@ func calculateTargetedPosition():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 
@@ -32,4 +30,4 @@ func _ready():
 func _process(delta):
 	if can_move:
 		var velocity = calculateVelocity(calculateTargetedPosition())
-		updatePosition(velocity, delta)
+		move_and_collide(velocity * delta)
