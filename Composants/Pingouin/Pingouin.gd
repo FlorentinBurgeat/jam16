@@ -31,3 +31,8 @@ func _process(delta):
 	if can_move:
 		var velocity = calculateVelocity(calculateTargetedPosition())
 		move_and_collide(velocity * delta)
+
+
+
+func _on_Spotlight_body_shape_entered(body_id, body, body_shape, area_shape):
+	print_debug('SPOTTED - TODO')
