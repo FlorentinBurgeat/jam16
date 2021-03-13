@@ -1,7 +1,10 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Composants/Pingouin/Pingouin.gd" type="Script" id=1]
 
 [node name="Pingouin" type="KinematicBody2D"]
 position = Vector2( 72.106, 60.3069 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
