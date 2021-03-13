@@ -4,7 +4,7 @@
 radius = 63.2154
 
 [node name="Spotlight" type="Area2D"]
-position = Vector2( 170.578, 133.994 )
+position = Vector2( -0.97818, -0.104507 )
 __meta__ = {
 "_edit_group_": true
 }

@@ -42,9 +42,9 @@ func _process(delta):
 		$AnimatedSprite.stop()
 
 
-func _on_Spotlight_body_entered(body):
-	print_debug('SPOTTED Spotlight - TODO')
-
-
 func _on_VisionCone_body_entered(body):
 	print_debug('SPOTTED Cone de vision - TODO')
+
+
+func _on_Spotlight1_on_body_entered():
+	print_debug('SPOTTED Spotlight - TODO')

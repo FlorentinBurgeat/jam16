@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Composants/Spotlight/Spotlight.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Composants/Spotlight/MovingSpotlight.gd" type="Script" id=2]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+script = ExtResource( 2 )
+
+[node name="Spotlight" parent="." instance=ExtResource( 1 )]
+[connection signal="body_entered" from="Spotlight" to="." method="_on_Spotlight_body_entered"]
+[connection signal="body_exited" from="Spotlight" to="." method="_on_Spotlight_body_exited"]

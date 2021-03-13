@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Composants/Maison/Maison.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Composants/Pingouin/Pingouin.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Composants/Spotlight/Spotlight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Composants/Spotlight/MovingSpotlight.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Composants/Gardien/Gardien.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 169.341, 303.468, 0, 0, 0, 0, 626.442, 302.745, 0, 0, 0, 0, 169.491, 303.418 )
+}
 
 [node name="Zoo" type="Node"]
 
@@ -25,7 +30,14 @@ current = true
 [node name="Pingouin" parent="." instance=ExtResource( 2 )]
 z_index = 3
 
-[node name="Spotlight" parent="." instance=ExtResource( 3 )]
-
 [node name="Gardien" parent="." instance=ExtResource( 4 )]
-[connection signal="body_entered" from="Spotlight" to="Pingouin" method="_on_Spotlight_body_entered"]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="Spotlight1" parent="Path2D" instance=ExtResource( 3 )]
+position = Vector2( 169.341, 303.468 )
+rotate = false
+cubic_interp = false
+followSpeed = 100
+[connection signal="on_body_entered" from="Path2D/Spotlight1" to="Pingouin" method="_on_Spotlight1_on_body_entered"]
