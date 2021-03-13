@@ -8,10 +8,10 @@
 [node name="Zoo" type="Node"]
 
 [node name="Terrain" type="ColorRect" parent="."]
-margin_left = -478.65
-margin_top = -281.305
-margin_right = 1953.35
-margin_bottom = 1863.69
+margin_left = -456.65
+margin_top = -287.305
+margin_right = 1975.35
+margin_bottom = 1857.69
 __meta__ = {
 "_edit_use_anchors_": false
 }
