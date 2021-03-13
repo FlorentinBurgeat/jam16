@@ -28,9 +28,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var velocity = calculateVelocity(calculateTargetedPosition())
 	if can_move:
-		var velocity = calculateVelocity(calculateTargetedPosition())
 		move_and_collide(velocity * delta)
+	if velocity.x != 0 || velocity.y != 0 :
+		if $AnimatedSprite.playing == false:
+			$AnimatedSprite.play("walk")
+		if velocity.x < 0 :
+			$AnimatedSprite.set_flip_h(true)
+		if velocity.x > 0  : 
+			$AnimatedSprite.set_flip_h(false)
+	else:
+		$AnimatedSprite.stop()
+
 
 func _on_Spotlight_body_entered(body):
 	print_debug('SPOTTED Spotlight - TODO')
