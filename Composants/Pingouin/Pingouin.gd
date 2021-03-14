@@ -48,3 +48,4 @@ func _on_VisionCone_body_entered(body):
 
 func _on_Spotlight1_on_body_entered():
 	print_debug('SPOTTED Spotlight - TODO')
+
