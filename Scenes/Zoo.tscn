@@ -13,10 +13,10 @@ _data = {
 [node name="Zoo" type="Node"]
 
 [node name="Terrain" type="ColorRect" parent="."]
-margin_left = -496.497
-margin_top = -331.642
-margin_right = 1935.5
-margin_bottom = 1813.35
+margin_left = -771.204
+margin_top = -574.24
+margin_right = 1660.79
+margin_bottom = 1570.75
 __meta__ = {
 "_edit_use_anchors_": false
 }
