@@ -29,17 +29,15 @@ cull_mode = 1
 polygon = PoolVector2Array( -0.640381, -20.9845, 7.34813, -21.8253, 7.76859, 17.6968, -1.48128, 17.6968 )
 
 [node name="Pingouin" type="KinematicBody2D"]
-position = Vector2( -0.876427, 0.186584 )
+z_index = 3
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1.6818, -3.5738 )
-scale = Vector2( 0.921166, 0.980291 )
 frames = SubResource( 3 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2.45549, 10.1105 )
+position = Vector2( -5.33937, 14.0158 )
 shape = SubResource( 4 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
