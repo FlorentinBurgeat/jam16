@@ -44,3 +44,4 @@ occluder = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 19.7784, 8.85991 )
 frames = SubResource( 4 )
+[connection signal="body_entered" from="VisionCone" to="." method="_on_VisionCone_body_entered"]

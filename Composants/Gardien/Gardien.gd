@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+signal playerspotted
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -19,5 +19,9 @@ func movementLoop(delta):
    
 	
 
-func _physics_process(delta):
-	movementLoop(delta)
+#func _physics_process(delta):
+#	movementLoop(delta)
+
+
+func _on_VisionCone_body_entered(body):
+	emit_signal("playerspotted")
