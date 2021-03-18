@@ -22,9 +22,11 @@ func calculateTargetedPosition():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	pass # Replace with function body.
+	var gardien = get_tree().get_root().find_node("Gardien", true, false)
+	gardien.connect("playerspotted", self, "handleplayerspotted")
 
+func handleplayerspotted():
+	print_debug('Pingouin repéré !')
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -48,3 +50,11 @@ func _on_VisionCone_body_entered(body):
 
 func _on_Spotlight1_on_body_entered():
 	print_debug('SPOTTED Spotlight - TODO')
+
+
+func _on_Sortie_body_entered(body):
+	print_debug(body.name)
+	print_debug('Victoire !') # Replace with function body.
+	if (body.name == "Pingouin"):
+		get_tree().change_scene("res://Scenes/Ecran-titre.tscn")
+	
