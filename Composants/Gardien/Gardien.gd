@@ -1,27 +1,75 @@
-extends KinematicBody2D
+extends PathFollow2D
 
 signal playerspotted
 # Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-var speed = 5
-var move_direction = 0
-onready var path_follow = get_parent()
-# Called when the node enters the scene tree for the first time.
 
-func movementLoop(delta):
-	var prepos = path_follow.get_global_position()
-	path_follow.set_offset(path_follow.get_offset() + speed + delta)
-	var pos = path_follow.get_global_position()
-	move_direction = (pos.angle_to_point(prepos)/3.14)*180
-	
-	
-   
-	
+enum Direction {
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
+}
+
+var speed = 5
+var current_direction = Direction.DOWN
 
 func _physics_process(delta):
-	movementLoop(delta)
+	var prepos = get_global_position()
+	set_offset(get_offset() + speed + delta)
+	var next_direction = get_next_direction(prepos)
+	
+	if next_direction != current_direction:
+		print_debug(next_direction)
+		set_directional_properties(current_direction)
+		current_direction = next_direction
 
+
+func get_next_direction(oldpos: Vector2):
+	var angle :float = rad2deg((get_global_position() - oldpos).angle())
+	if angle >= -135 and angle <= -45:
+		return Direction.RIGHT
+	if angle < -135 or angle > 135:
+		return Direction.UP
+	if angle >= 45 and angle <=135 :
+		return Direction.LEFT
+	return Direction.DOWN
+
+func set_directional_properties(direction: int) -> void:
+	match direction:
+		Direction.UP:
+			set_up()
+		Direction.LEFT:
+			set_left()
+		Direction.DOWN:
+			set_down()
+		Direction.RIGHT:
+			set_right()
+
+func set_up():
+	animate("up")
+	place_cone(1, -127, 93)
+	
+func set_left():
+	animate("horizontal", true)
+	place_cone(-87, 3, 0)
+
+func set_right():
+	animate("horizontal", false)
+	place_cone(84, 3, -175)
+	
+func set_down():
+	animate("down")
+	place_cone(-4, 130, -87)
+	
+func animate(direction: String, hflip: bool = false) -> void:
+	$KinematicBody2D/AnimatedSprite.set_animation(direction)
+	$KinematicBody2D/AnimatedSprite.set_flip_h(hflip)
+	var y_offset = -10 if direction == "horizontal" else 0
+	$KinematicBody2D/AnimatedSprite.set_offset(Vector2(0,y_offset))
+	
+func place_cone(x:int, y:int, rot: float) -> void:
+	$VisionCone.set_position(Vector2(x, y))
+	$VisionCone.set_rotation_degrees(rot)
 
 func _on_VisionCone_body_entered(body):
 	if (body.name == "Pingouin"):

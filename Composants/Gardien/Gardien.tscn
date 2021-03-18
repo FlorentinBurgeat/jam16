@@ -1,47 +1,85 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Composants/Spotlight/Spotlight.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/spritegarde.png" type="Texture" id=2]
 [ext_resource path="res://Composants/Gardien/Gardien.gd" type="Script" id=3]
+[ext_resource path="res://assets/gardien2.png" type="Texture" id=4]
 
-[sub_resource type="OccluderPolygon2D" id=1]
-polygon = PoolVector2Array( 3.4964, 7.79584, -139.641, -93.4162, 39.3626, 4.53736, -112.489, 106.75 )
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 64, 128 )
 
 [sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 192, 0, 64, 128 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 64, 128 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 64, 128 )
+
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 64, 128 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 64, 128 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
-"name": "default",
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "horizontal",
 "speed": 5.0
 } ]
 
-[node name="Gardien" type="KinematicBody2D"]
+[sub_resource type="OccluderPolygon2D" id=8]
+polygon = PoolVector2Array( 3.4964, 7.79584, -139.641, -93.4162, 39.3626, 4.53736, -112.489, 106.75 )
+
+[node name="Gardien" type="PathFollow2D"]
 script = ExtResource( 3 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 16.1454, 25.0342 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
+position = Vector2( -4.34526, 5.43444 )
 scale = Vector2( 2.61454, 4.75209 )
 polygon = PoolVector2Array( -4.07161, 9.3571, 4.53411, 9.46232, 4.53411, 3.25453, -4.07161, 3.25453 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 0.178638, -0.939986 )
+frames = SubResource( 7 )
+animation = "down"
+playing = true
+
 [node name="VisionCone" parent="." instance=ExtResource( 1 )]
-position = Vector2( -39.8631, 5.60963 )
+position = Vector2( -4.01804, 130.47 )
+rotation = -1.51669
 scale = Vector2( 0.5, 0.5 )
 angular_damp = 0.0
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource( 1 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 19.7784, 8.85991 )
-frames = SubResource( 4 )
+[node name="LightOccluder2D" type="LightOccluder2D" parent="VisionCone"]
+position = Vector2( 65.4557, -13.5977 )
+scale = Vector2( 2, 2 )
+occluder = SubResource( 8 )
 [connection signal="body_entered" from="VisionCone" to="." method="_on_VisionCone_body_entered"]
