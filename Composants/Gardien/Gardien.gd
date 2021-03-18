@@ -4,7 +4,7 @@ signal playerspotted
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var speed = 10
+var speed = 5
 var move_direction = 0
 onready var path_follow = get_parent()
 # Called when the node enters the scene tree for the first time.
@@ -19,9 +19,10 @@ func movementLoop(delta):
    
 	
 
-#func _physics_process(delta):
-#	movementLoop(delta)
+func _physics_process(delta):
+	movementLoop(delta)
 
 
 func _on_VisionCone_body_entered(body):
-	emit_signal("playerspotted")
+	if (body.name == "Pingouin"):
+		emit_signal("playerspotted")

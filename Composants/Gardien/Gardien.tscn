@@ -34,7 +34,7 @@ scale = Vector2( 2.61454, 4.75209 )
 polygon = PoolVector2Array( -4.07161, 9.3571, 4.53411, 9.46232, 4.53411, 3.25453, -4.07161, 3.25453 )
 
 [node name="VisionCone" parent="." instance=ExtResource( 1 )]
-position = Vector2( -29.7495, 12.7266 )
+position = Vector2( -39.8631, 5.60963 )
 scale = Vector2( 0.5, 0.5 )
 angular_damp = 0.0
 

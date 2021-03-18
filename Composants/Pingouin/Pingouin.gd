@@ -55,5 +55,6 @@ func _on_Spotlight1_on_body_entered():
 func _on_Sortie_body_entered(body):
 	print_debug(body.name)
 	print_debug('Victoire !') # Replace with function body.
-	get_tree().change_scene("res://Scenes/Ecran-titre.tscn")
+	if (body.name == "Pingouin"):
+		get_tree().change_scene("res://Scenes/Ecran-titre.tscn")
 	
