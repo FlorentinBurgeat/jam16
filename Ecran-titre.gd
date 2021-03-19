@@ -19,3 +19,11 @@ func _ready():
 func _on_Start_pressed():
 	get_tree().change_scene("res://Scenes/Zoo.tscn")
 	
+
+
+func _on_Start_mouse_entered():
+	$Start/FishLight.enabled = true
+
+
+func _on_Start_mouse_exited():
+	$Start/FishLight.enabled = false
