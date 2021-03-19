@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Composants/Maison/Maison.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Composants/Pingouin/Pingouin.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://assets/floor2.png" type="Texture" id=19]
 [ext_resource path="res://assets/pinguland.ogg" type="AudioStream" id=20]
 [ext_resource path="res://Composants/Gardien/Gardien.tscn" type="PackedScene" id=21]
+[ext_resource path="res://VFX/Lucioles/Lucioles.tscn" type="PackedScene" id=22]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -759,5 +760,21 @@ texture = ExtResource( 17 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
 autoplay = true
+
+[node name="VFX" type="Node2D" parent="."]
+
+[node name="Lucioles" type="Node2D" parent="VFX"]
+
+[node name="Lucioles" parent="VFX/Lucioles" instance=ExtResource( 22 )]
+position = Vector2( -330.963, 68.3574 )
+z_index = 10
+
+[node name="Lucioles2" parent="VFX/Lucioles" instance=ExtResource( 22 )]
+position = Vector2( -256.964, -1038.26 )
+z_index = 10
+
+[node name="Lucioles3" parent="VFX/Lucioles" instance=ExtResource( 22 )]
+position = Vector2( -890.897, 2050.29 )
+z_index = 10
 [connection signal="on_body_entered" from="Spotlight1/Spotlight1" to="Pingouin" method="_on_Spotlight1_on_body_entered"]
 [connection signal="body_entered" from="Sortie" to="Pingouin" method="_on_Sortie_body_entered"]
