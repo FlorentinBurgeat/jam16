@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Composants/Maison/Maison.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Composants/Pingouin/Pingouin.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://assets/pinguland.ogg" type="AudioStream" id=20]
 [ext_resource path="res://Composants/Gardien/Gardien.tscn" type="PackedScene" id=21]
 [ext_resource path="res://VFX/Lucioles/Lucioles.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Composants/Lampadaire/Lampadaire.tscn" type="PackedScene" id=23]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -545,6 +546,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 96, 0, 96 )
 position = Vector2( 4281, 2435 )
 
 [node name="Pingouin" parent="." instance=ExtResource( 2 )]
+position = Vector2( 404, -835 )
 speed = 400
 
 [node name="Camera2D" type="Camera2D" parent="Pingouin"]
@@ -760,6 +762,9 @@ texture = ExtResource( 17 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
 autoplay = true
+
+[node name="Lampadaire" parent="." instance=ExtResource( 23 )]
+position = Vector2( 1016, -696 )
 
 [node name="VFX" type="Node2D" parent="."]
 
