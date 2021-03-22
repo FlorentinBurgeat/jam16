@@ -764,7 +764,43 @@ stream = ExtResource( 20 )
 autoplay = true
 
 [node name="Lampadaire" parent="." instance=ExtResource( 23 )]
-position = Vector2( 1016, -696 )
+position = Vector2( -703, 1222 )
+
+[node name="Lampadaire2" parent="." instance=ExtResource( 23 )]
+position = Vector2( -1440, -836 )
+
+[node name="Lampadaire3" parent="." instance=ExtResource( 23 )]
+position = Vector2( 296, -452 )
+
+[node name="Lampadaire4" parent="." instance=ExtResource( 23 )]
+position = Vector2( -1236, -48 )
+
+[node name="Lampadaire5" parent="." instance=ExtResource( 23 )]
+position = Vector2( -1977, 2561 )
+
+[node name="Lampadaire6" parent="." instance=ExtResource( 23 )]
+position = Vector2( -1393, 2547 )
+
+[node name="Lampadaire7" parent="." instance=ExtResource( 23 )]
+position = Vector2( -2476, 2554 )
+
+[node name="Lampadaire8" parent="." instance=ExtResource( 23 )]
+position = Vector2( -1001, 2547 )
+
+[node name="Lampadaire9" parent="." instance=ExtResource( 23 )]
+position = Vector2( 1087, 1613 )
+
+[node name="Lampadaire10" parent="." instance=ExtResource( 23 )]
+position = Vector2( 930, 3331 )
+
+[node name="Lampadaire11" parent="." instance=ExtResource( 23 )]
+position = Vector2( -2234, 3481 )
+
+[node name="Lampadaire12" parent="." instance=ExtResource( 23 )]
+position = Vector2( -1756, 3474 )
+
+[node name="Lampadaire13" parent="." instance=ExtResource( 23 )]
+position = Vector2( -1702, 382 )
 
 [node name="VFX" type="Node2D" parent="."]
 
