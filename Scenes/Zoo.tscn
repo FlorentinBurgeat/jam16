@@ -794,10 +794,10 @@ position = Vector2( 1087, 1613 )
 position = Vector2( 930, 3331 )
 
 [node name="Lampadaire11" parent="." instance=ExtResource( 23 )]
-position = Vector2( -2234, 3481 )
+position = Vector2( -2313, 3402 )
 
 [node name="Lampadaire12" parent="." instance=ExtResource( 23 )]
-position = Vector2( -1756, 3474 )
+position = Vector2( -1712, 3407 )
 
 [node name="Lampadaire13" parent="." instance=ExtResource( 23 )]
 position = Vector2( -1702, 382 )

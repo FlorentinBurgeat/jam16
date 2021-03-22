@@ -14,6 +14,7 @@ polygon = PoolVector2Array( -11, -128, 9, -128, 60, -162, -59, -158 )
 
 [node name="Spotlight" parent="." instance=ExtResource( 3 )]
 position = Vector2( -1.20972, 4.12706 )
+scale = Vector2( 2.4, 1.72 )
 
 [node name="Lampadaire" type="Sprite" parent="."]
 position = Vector2( -1, -72 )
