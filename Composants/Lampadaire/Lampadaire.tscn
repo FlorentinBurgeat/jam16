@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Lampadaire.png" type="Texture" id=1]
 [ext_resource path="res://assets/spot.png" type="Texture" id=2]
-[ext_resource path="res://Composants/Spotlight/Spotlight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Composants/Spotlight/MovingSpotlight.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Composants/Lampadaire/Lampadaire.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7 )
@@ -11,10 +12,10 @@ extents = Vector2( 7, 7 )
 polygon = PoolVector2Array( -11, -128, 9, -128, 60, -162, -59, -158 )
 
 [node name="Lampadaire" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="Spotlight" parent="." instance=ExtResource( 3 )]
-position = Vector2( -1.20972, 4.12706 )
-scale = Vector2( 2.4, 1.72 )
+scale = Vector2( 2.24, 1 )
 
 [node name="Lampadaire" type="Sprite" parent="."]
 position = Vector2( -1, -72 )
@@ -32,3 +33,4 @@ shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 2 )
+[connection signal="on_body_entered" from="Spotlight" to="." method="_on_PathFollow2D_on_body_entered"]

@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/spotlight_1.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 63.2154
+radius = 53.491
 
 [sub_resource type="CanvasItemMaterial" id=2]
 blend_mode = 1
@@ -26,7 +26,7 @@ scale_curve = SubResource( 4 )
 color = Color( 0.843137, 0.843137, 0.843137, 1 )
 
 [node name="Spotlight" type="Area2D"]
-position = Vector2( -1.20972, 0.12706 )
+position = Vector2( 0.792538, 0.12706 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -44,8 +44,8 @@ shadow_filter_smooth = 14.5
 
 [node name="spot" type="Sprite" parent="."]
 self_modulate = Color( 0.666667, 0.666667, 0.666667, 1 )
-position = Vector2( 1.20972, -0.12706 )
-scale = Vector2( 0.892263, 0.892263 )
+position = Vector2( 2.87823, 0.540344 )
+scale = Vector2( 2.06546, 2.04982 )
 texture = ExtResource( 1 )
 
 [node name="Particles2D" type="Particles2D" parent="."]

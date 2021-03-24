@@ -10,7 +10,7 @@ enum Direction {
 	RIGHT
 }
 
-var speed = 5
+export var speed = 5
 var current_direction = Direction.DOWN
 
 func _physics_process(delta):
@@ -19,7 +19,6 @@ func _physics_process(delta):
 	var next_direction = get_next_direction(prepos)
 	
 	if next_direction != current_direction:
-		print_debug(next_direction)
 		set_directional_properties(current_direction)
 		current_direction = next_direction
 
