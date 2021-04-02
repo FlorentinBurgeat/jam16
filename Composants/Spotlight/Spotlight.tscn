@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/spotlight_1.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 53.491
+radius = 79.9484
 
 [sub_resource type="CanvasItemMaterial" id=2]
 blend_mode = 1

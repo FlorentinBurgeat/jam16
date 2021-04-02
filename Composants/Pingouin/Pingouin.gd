@@ -39,7 +39,7 @@ func _process(delta):
 
 
 func _on_spotted():
-	print("spotted")
+	print_debug("spotted")
 	emit_signal("loose")
 
 func _on_Sortie_body_entered(body):
